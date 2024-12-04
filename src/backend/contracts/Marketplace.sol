@@ -48,7 +48,7 @@ contract Marketplace is ReentrancyGuard {
     }
 
     // Make item to offer on the marketplace
-    function makeItem(IERC721 _nft, uint _tokenId, uint _price) external nonReentrant {
+    function makeItem(IERC721 _nft, uint _tokenId, uint _price) external payable nonReentrant {
         require(_price > 0, "Price must be greater than zero");
         // increment itemCount
         itemCount ++;
